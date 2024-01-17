@@ -118,14 +118,15 @@
 </html>
 
 <script>
-
     var btn = document.getElementById('sumbit');
-    var btn = document.getElementsByTagName('input')[0];
-    btn.addEventListener('keyup', function (e) {
-        if(e.code == "Enter") {
+
+    var inputfield = document.getElementById('task');
+    inputfield.addEventListener('keyup', function (e) {
+        if (e.code === "Enter") {
             btn.click();
         }
     });
+
 
     if (localStorage.getItem('TodoList') === "") {
         var arr = [];
@@ -134,7 +135,7 @@
         displayData();
     }
 
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
         var input = document.getElementById('task').value;
         var obj = {}
         obj.task = input;
